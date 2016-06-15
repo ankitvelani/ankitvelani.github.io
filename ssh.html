@@ -1,51 +1,23 @@
-<html>
-  <head>
-      
-  <head>
-  <body>
-      <h3>SSH Server</h3>
-        <p>
-          Secure Shell (SSH) is a cryptographics network protocol for operating network services sercurely over an unsercured network. 
-        </p>
-        <p>
-          SSH provides a secure channel over an unsecured network in a client-server architecture. Connecting an SSH client application with an SSH server. Common appliaction include command lin login and create remote command execution , but any network server  can be secured with SSH.
-        </p>
-        <p>
-          SSH was desgined as a replacement for Telnet and unsecured remote shell protocols such as the rlogin , rsh and rexec protocols. Those protocol send an information that can be easy interprete by packate analyzer.
+Secure Shell (SSH)
 
-        </p>
-        <p>
-          The Encryption used by SSH is intended to provide high security over the insecure network , such as the telnet .
-        </p>
-        <p>
-          SSH uses public-key cryptography to authenticate the remote computer and allow it to authenticate the user, if necessary , there are different ways to use SSH;
+SSH Server
 
-        </p>
-        <ol>
-          <li>
-            Automatically generated public-private key pairs to simply encrypt a network connection and then use password authentication to log on.
-          </li>
-          <li>
-            Another is to use a manually generated public-priavte key pair ot perform authentication, allowing users or programs to login without having to specific password. In this scenario, anyone can produce a matching pair of different keys ( public and private ). The public key is places on all computers that must allow access to the owner of the matching private key (the owner keeps the private key secret).
-Whiel authentication is based on the private key , the key it self is never transferred throught the network during the authentication. SSH only verify whether the same person offering the public key also owns the matching private key.
-          </li>
-        </ol>
-        <p>
-          In all version of SSH it is important to verify unkown public keys , ie associate the public keys with identities , before accespting them as valid , acceting an attacker's public key without valication will authorize an unauthorized attacker as a valid user.
+Secure Shell (SSH) is a cryptographic network protocol for operating network services securely over an unsecured network.
 
-        </p>
-        
-        <h3>Key management</h3>
-        <p>
-          On Unix-like systems , the list of authorized public keys is typically stored on the home directory of the user that is allowed to login in remotely.In the file ~/.ssh/authored_keys.
-        </p>
-        <p>
-          This file is respected by SSH only if it is not writable by anything apart from the owner and root. When the public key is present on the remote end and the matching private key is present on the local end, typing in the password is no longer required. For additional security the private key itself can be locked with a passphrase. The private key can also be looked for in standard places , and its full path can be specified as command line setting for ssh option.
-        </p>
-        <p>
-          The <b>ssh-keygen</b> utility produces the public and private keys, always in pairs.
-SSH also supports password-based authentication that is encrypted by automatically generated keys. In this case the attacker could imitate the legitimate server side ask for the password , and obtain it man-in-the-middle-attack. Howerver , this is possible only if the two sides have never authenticated before, as SSH remembers the key that the server side previously used. The SSH client raises a warning before accepting the key of a new , previously unknown server. Password authentication can be disabled.
+SSH provides a secure channel over an unsecured network in a client-server architecture. Connecting an SSH client application with an SSH server. The common application includes command lin login and creates remote command execution , but any network server can be secured with SSH.
+SSH was designed as a replacement for Telnet and unsecured remote shell protocols such as the rlogin , rsh and rexec protocols. Those protocols send an information that can be easy interpreter by packet analyser.
 
-        </p>
-    </body>
-</html>
+The Encryption used by SSH is intended to provide high security over the insecure network , such as the telnet .
+
+SSH uses public-key cryptography to authenticate the remote computer and allow it to authenticate the user, if necessary , there are different ways to use SSH;
+Automatically generated public-private key pairs to simply encrypt a network connection and then use password authentication to log on.
+Another is to use a manually generated public-private key pair to perform authentication, allowing users or programs to login without having to a specific password. In this scenario, anyone can produce a matching pair of different keys ( public and private ). The public key is living on all computers that must allow access to the owner of the matching private key (the owner keeps the private key secret). While authentication is based on the private key , the key itself is never transferred through the network during the authentication. SSH only verify whether the same person offering the public key also owns the matching private key.
+In all version of SSH it is important to verify unknown public keys , ie associate the public keys with identities , before accepting them as valid , accepting an attacker's public key without validation will authorise an unauthorised attacker as a valid user.
+
+
+
+Key management
+
+On Unix-like systems , the list of authorised public keys is typically stored in the home directory of the user that is allowed to login in remotely.In the file ~/.ssh/authored_keys.
+This file is respected by SSH only if it is not writable by anything apart from the owner and root. When the public key is present on the remote end and the matching private key is present on the local end, typing in the password is no longer required. For additional security, the private key itself can be locked with a passphrase. The private key can also be looked for in standard places , and its full path can be specified as command line setting for ssh option.
+The ssh-keygen utility produces the public and private keys, always in pairs. SSH also supports password-based authentication that is encrypted by automatically generated keys. In this case, the attacker could imitate the legitimate server side ask for the password , and obtain it man-in-the-middle-attack. However , this is possible only if the two sides have never authenticated before, as SSH remembers the key that the server side previously used. The SSH client raises a warning before accepting the key of a new , previously unknown server. Password authentication can be disabled.
